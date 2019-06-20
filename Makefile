@@ -1,5 +1,9 @@
 include config.mk
 
+ifeq ($(USED_STDPERPH_DRIVER), 1)
+include stdperiph.mk 
+endif
+
 SRCS += $(DIR_APP)/main.c
 SRCS += $(DIR_APP)/delay.c
 SRCS += $(DIR_APP)/led.c
