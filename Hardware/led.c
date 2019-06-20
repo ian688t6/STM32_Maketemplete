@@ -24,10 +24,10 @@ void led_blink(void)
 {
 	GPIO_ResetBits(GPIOA,GPIO_Pin_8);
 	GPIO_SetBits(GPIOD,GPIO_Pin_2);
-	delay_ms(300);
+	delay_ms(500);
 	GPIO_SetBits(GPIOA,GPIO_Pin_8);
 	GPIO_ResetBits(GPIOD,GPIO_Pin_2);
-	delay_ms(300);
+	delay_ms(500);
 	return;
 }
 

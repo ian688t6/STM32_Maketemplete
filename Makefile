@@ -5,13 +5,14 @@ include stdperiph.mk
 endif
 
 SRCS += $(DIR_APP)/main.c
-SRCS += $(DIR_APP)/delay.c
-SRCS += $(DIR_APP)/led.c
+SRCS += $(DIR_HARDWARE)/delay.c
+SRCS += $(DIR_HARDWARE)/led.c
 
 OBJS := $(patsubst %.c,%.o,$(SRCS))
 OBJS += $(patsubst %.s,%.o,$(ASMS))
 
-CFLAGS += -I$(DIR_APP)
+CFLAGS += -I$(DIR_APP) \
+-I$(DIR_HARDWARE)
 
 .PHONY: all clean
 

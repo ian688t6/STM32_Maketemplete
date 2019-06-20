@@ -1,6 +1,7 @@
 ### Configure enviroment ###
 
 DIR_OUT 			:= Out
+DIR_HARDWARE 		:= Hardware
 DIR_APP				:= App
 DIR_LIBRARIES		:= Libraries
 DIR_LINKSCRPT		:= Linkscript

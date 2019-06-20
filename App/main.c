@@ -4,7 +4,9 @@
 
 int main(void)
 {
+	delay_init();
 	led_init();
+	
 	for (;;)
 	{
 		led_blink();	
