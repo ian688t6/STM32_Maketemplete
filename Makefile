@@ -5,7 +5,7 @@ include stdperiph.mk
 endif
 
 SRCS += $(DIR_APP)/main.c
-SRCS += $(DIR_APP)/print.c
+SRCS += $(DIR_SYSTEM)/print.c
 SRCS += $(DIR_SYSTEM)/sys.c
 SRCS += $(DIR_HARDWARE)/led.c
 SRCS += $(DIR_HARDWARE)/uart.c
