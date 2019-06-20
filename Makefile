@@ -5,8 +5,10 @@ include stdperiph.mk
 endif
 
 SRCS += $(DIR_APP)/main.c
+SRCS += $(DIR_APP)/print.c
 SRCS += $(DIR_HARDWARE)/delay.c
 SRCS += $(DIR_HARDWARE)/led.c
+SRCS += $(DIR_HARDWARE)/uart.c
 
 OBJS := $(patsubst %.c,%.o,$(SRCS))
 OBJS += $(patsubst %.s,%.o,$(ASMS))

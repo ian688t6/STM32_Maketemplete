@@ -41,7 +41,7 @@ ASMS := $(DIR_LIBRARIES)/CMSIS/CM3/DeviceSupport/ST/STM32F10x/startup/gcc_ride7/
 SRCS := \
 		$(DIR_LIBRARIES)/CMSIS/CM3/DeviceSupport/ST/STM32F10x/system_stm32f10x.c \
 		$(DIR_LIBRARIES)/CMSIS/CM3/CoreSupport/core_cm3.c
-CFLAGS = $(MCU) $(DEFS) $(C_INCLUDES) $(OPT) -Wall -Werror -fdata-sections -ffunction-sections
+CFLAGS = $(MCU) $(DEFS) $(C_INCLUDES) $(OPT)  -Wall -Werror -fdata-sections -ffunction-sections
 
 LDSCRIPT = STM32F103RCTx_FLASH.ld
 
