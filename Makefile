@@ -4,11 +4,11 @@ ifeq ($(USED_STDPERPH_DRIVER), 1)
 include stdperiph.mk 
 endif
 
-SRCS += $(DIR_APP)/main.c
 SRCS += $(DIR_SYSTEM)/print.c
 SRCS += $(DIR_SYSTEM)/sys.c
 SRCS += $(DIR_HARDWARE)/led.c
 SRCS += $(DIR_HARDWARE)/uart.c
+SRCS += $(DIR_APP)/main.c
 
 OBJS := $(patsubst %.c,%.o,$(SRCS))
 OBJS += $(patsubst %.s,%.o,$(ASMS))
@@ -26,12 +26,12 @@ all: ${TARGET}
 
 ${TARGET}: ${OBJS} 
 	$(CC) $(OBJS) $(LFLAGS) -o $@
-	$(OD) -d $@ > $@.dump
-	$(OD) -h $@ > $@.map
-	$(NM) $@ | sort > $@.sym
-	$(NM) -S --size-sort $@ > $@.nm
-	$(CP) -O ihex ${TARGET} $(DIR_OUT)/${TARGET}.hex
-	$(CP) -O binary -S ${TARGET} $(DIR_OUT)/${TARGET}.bin
+	$(OD) -d $@ > $(DIR_OUT)/$@.dump
+	$(OD) -h $@ > $(DIR_OUT)/$@.map
+	$(NM) $@ | sort > $(DIR_OUT)/$@.sym
+	$(NM) -S --size-sort $@ > $(DIR_OUT)/$@.nm
+	$(CP) -O ihex $@ $(DIR_OUT)/$@.hex
+	$(CP) -O binary -S $@ $(DIR_OUT)/$@.bin
 	rm -rf ${TARGET}
 
 %.o: %.c
@@ -41,5 +41,5 @@ ${TARGET}: ${OBJS}
 
 clean:
 	@echo "Clean Source"
-	rm -rf $(OBJS) $(TARGET) $(TARGET).*
+	rm -rf $(OBJS) $@
 
