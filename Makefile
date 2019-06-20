@@ -24,6 +24,7 @@ ${TARGET}: ${OBJS}
 	$(NM) -S --size-sort $@ > $@.nm
 	$(CP) -O ihex ${TARGET} $(DIR_OUT)/${TARGET}.hex
 	$(CP) -O binary -S ${TARGET} $(DIR_OUT)/${TARGET}.bin
+	rm -rf ${TARGET}
 
 %.o: %.c
 	$(CC) -c $(CFLAGS) $< -o $@

@@ -3,5 +3,6 @@
 *.hex
 *.sym
 *.map
-
+*.nm
+*.dump
 
