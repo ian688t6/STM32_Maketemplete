@@ -2,7 +2,7 @@
 
 
 ## Compile the project
-# make
+#### make
 
 ## Clean the source
-# make clean
+#### make clean
