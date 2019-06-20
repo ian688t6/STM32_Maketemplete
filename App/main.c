@@ -1,5 +1,5 @@
 #include <stdint.h>
-#include "delay.h"
+#include "sys.h"
 #include "led.h"
 #include "uart.h"
 #include "print.h"
@@ -7,7 +7,7 @@
 int main(void)
 {
 	uart_init(115200);
-	delay_init();
+	sys_init();
 	led_init();
 
 	for (;;)

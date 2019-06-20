@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <stdarg.h>
+#include "sys.h"
 #include "uart.h"
 
 #define MAX_LOG_LENGTH		150
@@ -136,8 +137,8 @@ void printlog(const char *format, ...)
 	va_list args;
 	int i;
 
-//	__disable_irq();
-
+	girq_disable();
+	
 	gi_log_idx = 0;
 
 	va_start(args, format);
@@ -150,6 +151,7 @@ void printlog(const char *format, ...)
 		uart_putc(gac_log_array[i]);
 	}
 
-//	__enable_irq();
+	girq_enable();
+	return;
 }
 

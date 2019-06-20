@@ -2,6 +2,7 @@
 
 DIR_OUT 			:= Out
 DIR_HARDWARE 		:= Hardware
+DIR_SYSTEM 			:= System
 DIR_APP				:= App
 DIR_LIBRARIES		:= Libraries
 DIR_LINKSCRPT		:= Linkscript

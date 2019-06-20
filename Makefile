@@ -6,7 +6,7 @@ endif
 
 SRCS += $(DIR_APP)/main.c
 SRCS += $(DIR_APP)/print.c
-SRCS += $(DIR_HARDWARE)/delay.c
+SRCS += $(DIR_SYSTEM)/sys.c
 SRCS += $(DIR_HARDWARE)/led.c
 SRCS += $(DIR_HARDWARE)/uart.c
 
@@ -14,7 +14,8 @@ OBJS := $(patsubst %.c,%.o,$(SRCS))
 OBJS += $(patsubst %.s,%.o,$(ASMS))
 
 CFLAGS += -I$(DIR_APP) \
--I$(DIR_HARDWARE)
+-I$(DIR_HARDWARE) \
+-I$(DIR_SYSTEM)
 
 .PHONY: all clean
 

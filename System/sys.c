@@ -1,11 +1,11 @@
 #include <stdint.h>
 #include "stm32f10x.h"
-#include "delay.h"
+#include "sys.h"
 
 static uint8_t  guc_fac_us = 0;			   
 static uint16_t gus_fac_ms = 0;			   
 
-void delay_init(void)
+void sys_init(void)
 {
 	SysTick_CLKSourceConfig(SysTick_CLKSource_HCLK_Div8);
 	guc_fac_us = SystemCoreClock / 8000000;
